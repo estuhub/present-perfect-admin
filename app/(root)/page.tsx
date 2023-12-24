@@ -1,12 +1,15 @@
-import { Button } from "@/components/ui/button";
-import { UserButton } from "@clerk/nextjs";
+"use client"
+
+import { useEffect } from "react"
+
+import { useStoreModal } from "@/hooks/use-store-modal"
 
 export default function Home() {
-    return (
-        <div className="p-4">
-            <h1>Hello Admin Dashboard</h1>
-            <UserButton afterSignOutUrl="/" />
-        </div>
-    )
-  }
+  const { onOpen, isOpen } = useStoreModal()
   
+  useEffect(() => {
+    if (!isOpen) onOpen()
+  }, [isOpen, onOpen])
+
+  return <div>Root</div>
+}

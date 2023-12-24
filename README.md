@@ -38,3 +38,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # Authetincation: Clerk
 Security and authentications handled by a third party company. For more info, check  the [documentation](https://clerk.com/docs).
 
+# Components Library: ShadCN/UI
+For reusable NextJS components. For more info, check [documentation](https://ui.shadcn.com/docs)
+
+# State Management: Zustand
+ Library for React applications that provides a simple and flexible way to manage global state. For more info, check [documentation](https://docs.pmnd.rs/zustand/getting-started/introduction)
+ 
