@@ -1,17 +1,25 @@
-import { UserButton } from "@clerk/nextjs"
+import { UserButton, auth } from "@clerk/nextjs"
+import { redirect } from "next/navigation"
 
 import { MainNav } from "@/components/main-nav"
+import StoreSwitcher from "./store-switcher"
+import prismadb from "@/lib/prismadb"
 
-const Navbar = () => {
+const Navbar = async () => {
+    const { userId } = auth()
+
+    if (!userId) redirect('/sign-in')
+
+    const stores = await prismadb.store.findMany({
+        where: { userId },
+    })
+
     return (
         <div className="flex h-16 items-center px-4 border-b">
-            {/* Store Switcher using Combobox */}
-            <div>This will be the store switcher</div>
-            {/* Routes */}
-            <MainNav className="mx-6"/>
-            {/* User Button using Clerk */}
+            <StoreSwitcher items={stores} /> {/* Store Switcher using Combobox */}
+            <MainNav className="mx-6"/> {/* Routes */}
             <div className="ml-auto flex items-center space-x-4">
-                <UserButton afterSignOutUrl="/" />
+                <UserButton afterSignOutUrl="/" /> {/* User Button using Clerk */}
             </div>
         </div>
     )
