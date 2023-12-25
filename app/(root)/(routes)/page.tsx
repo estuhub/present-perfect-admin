@@ -11,5 +11,5 @@ export default function Home() {
     if (!isOpen) onOpen()
   }, [isOpen, onOpen])
 
-  return <div>Root</div>
+  return null
 }
