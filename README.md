@@ -52,6 +52,7 @@ To install: `npm i -D prisma @prisma/client`
 To initialize: `npx prisma init`
 To generate DB: `npx prisma generate`
 To add/update schema in DB: `npx prisma db push`
+To reset DB: `npm prisma migrate reset`
 
 ## MySQL-based database: PlanetScale
 MySQL-compatible serverless database that brings scale, performance, and reliability. For more info, check [documentation](https://planetscale.com/docs)
