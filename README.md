@@ -35,12 +35,29 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-# Authetincation: Clerk
+# Packages Used in this Project
+
+## Authetincation: Clerk
 Security and authentications handled by a third party company. For more info, check  the [documentation](https://clerk.com/docs).
 
-# Components Library: ShadCN/UI
+## Components Library: ShadCN/UI
 For reusable NextJS components. For more info, check [documentation](https://ui.shadcn.com/docs)
 
-# State Management: Zustand
- Library for React applications that provides a simple and flexible way to manage global state. For more info, check [documentation](https://docs.pmnd.rs/zustand/getting-started/introduction)
+## State Management: Zustand
+Library for React applications that provides a simple and flexible way to manage global state. For more info, check [documentation](https://docs.pmnd.rs/zustand/getting-started/introduction)
  
+## Database Management: Prisma & Prisma Client
+Simplify database access and management. For more info, check [documentation](https://www.prisma.io/docs)
+To install: `npm i -D prisma @prisma/client`
+To initialize: `npx prisma init`
+To generate DB: `npx prisma generate`
+To add/update schema in DB: `npx prisma db push`
+
+## MySQL-based database: PlanetScale
+MySQL-compatible serverless database that brings scale, performance, and reliability. For more info, check [documentation](https://planetscale.com/docs)
+
+## HTTPS Requests Management: Axios
+A simple, promise-based HTTP client for making requests to a RESTful API. For more info, check [documentation](https://axios-http.com/docs/intro)
+
+## Error Handler: react-hot-toast
+A simple React hook based toast notification library. For more info, check [documentation](https://react-hot-toast.com/)
