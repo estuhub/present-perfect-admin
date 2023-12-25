@@ -32,3 +32,28 @@ export async function PATCH(
     }
 }
 
+export async function DELETE(
+    req: Request,
+    { params }: { params: { storeId: string }}
+) {
+    try {
+        const { userId } = auth()
+        
+        // Avoid possible errors
+        if (!userId) return new NextResponse("Unauthorized", { status: 401 })
+        if (!params.storeId) return new NextResponse("Store id is required", { status: 400 })
+
+        // Delete Store in DB
+        const store = await prismadb.store.deleteMany({
+            where: {
+                id: params.storeId,
+                userId
+            }
+        })
+
+        return NextResponse.json(store)
+    } catch (error) {
+        console.log('[STORE_DELETE]', error)
+        return new NextResponse("Internal error", { status: 500 })
+    }
+}
