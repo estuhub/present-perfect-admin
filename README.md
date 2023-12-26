@@ -85,3 +85,6 @@ To upload: Use the <CldUploadWidget> and for the property `uploadPreset` go to y
 ## Images Manager for NextJS: next-cloudinary
 High-performance image and video delivery and uploading at scale in Next.js powered by Cloudinary. Form more info, check [documentation](https://next.cloudinary.dev/)
 To install: `npm install next-cloudinary`
+
+## Format Dates: date-fns
+Provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js. Form more info, check [documentation](https://date-fns.org/docs/Getting-Started)
