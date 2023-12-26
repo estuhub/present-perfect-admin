@@ -62,3 +62,26 @@ A simple, promise-based HTTP client for making requests to a RESTful API. For mo
 
 ## Error Handler: react-hot-toast
 A simple React hook based toast notification library. For more info, check [documentation](https://react-hot-toast.com/)
+
+## Images Upload: Cloudinary
+Handles uploading images to the cloud. Form more info, check [documentation](https://cloudinary.com/documentation)
+To config:
+1. Add Cloud Name to .env file
+1. Add images configuration in your next.config.js file
+```js
+const nextConfig = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'res.cloudinary.com',
+        },
+      ],
+    },
+}
+```
+To upload: Use the <CldUploadWidget> and for the property `uploadPreset` go to your Cloudinary account and follow the instructions: `Settings -> Upload -> Upload Presets --> Add Upload Preset -> Signing Mode: Unsigned` to get your Upload presets name and use it as a string.
+
+## Images Manager for NextJS: next-cloudinary
+High-performance image and video delivery and uploading at scale in Next.js powered by Cloudinary. Form more info, check [documentation](https://next.cloudinary.dev/)
+To install: `npm install next-cloudinary`
