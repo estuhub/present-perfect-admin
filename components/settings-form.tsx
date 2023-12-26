@@ -10,13 +10,14 @@ import { useParams, useRouter } from "next/navigation"
 import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 
-import { Button } from "@/components/ui/button"
-import { Heading } from "@/components/ui/heading"
-import { Separator } from "@/components/ui/separator"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
 import { AlertModal } from "@/components/modals/alert-modal"
 import { ApiAlert } from "@/components/ui/api-alert"
+import { Button } from "@/components/ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Heading } from "@/components/ui/heading"
+import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
+import { useOrigin } from "@/hooks/use-origin"
 
 interface SettingsFormProps {
     initialData: Store
@@ -33,6 +34,8 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
 }) => {
     const params = useParams()
     const router = useRouter()
+    const origin = useOrigin()
+    
     const [open, setOpen] = useState(false)
     const [loading, setLoading] = useState(false)
 
@@ -115,7 +118,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
                 </form>
             </Form>
             <Separator />
-            <ApiAlert title="NEXT_PUBLIC_API_URL" description="test-desc" variant="public"/>
+            <ApiAlert title="NEXT_PUBLIC_API_URL" description={`${origin}/api/${params.storeId}`} variant="public"/>
         </>
     )
 }
