@@ -6,7 +6,7 @@ import { Modal } from "@/components/ui/modal"
 import { Button } from "@/components/ui/button"
 
 interface AlertModalProps {
-    isOpen: boolean;
+    isOpen: boolean,
     onClose: () => void,
     onConfirm: () => void,
     loading: boolean
