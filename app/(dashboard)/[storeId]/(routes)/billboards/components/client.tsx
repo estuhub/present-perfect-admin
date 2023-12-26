@@ -7,8 +7,7 @@ import { Button } from "@/components/ui/button"
 import { DataTable } from "@/components/ui/data-table"
 import { Heading } from "@/components/ui/heading"
 import { Separator } from "@/components/ui/separator"
-
-import { BillboardColumn, columns } from "../app/(dashboard)/[storeId]/(routes)/billboards/components/columns"
+import { BillboardColumn, columns } from "./columns"
 
 interface BillboardClientProps {
     data: BillboardColumn[]
