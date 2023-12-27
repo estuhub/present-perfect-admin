@@ -12,7 +12,7 @@ export async function PATCH(
         const { name } = await req.json()
 
         // Avoid possible errors
-        if (!userId) return new NextResponse("Unauthorized", { status: 401 })
+        if (!userId) return new NextResponse("Unauthenticated", { status: 401 })
         if (!name) return new NextResponse("Name is required", { status: 400 })
         if (!params.storeId) return new NextResponse("Store id is required", { status: 400 })
 
@@ -40,7 +40,7 @@ export async function DELETE(
         const { userId } = auth()
         
         // Avoid possible errors
-        if (!userId) return new NextResponse("Unauthorized", { status: 401 })
+        if (!userId) return new NextResponse("Unauthenticated", { status: 401 })
         if (!params.storeId) return new NextResponse("Store id is required", { status: 400 })
 
         // Delete Store in DB

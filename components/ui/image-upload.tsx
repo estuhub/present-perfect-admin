@@ -32,6 +32,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
     
     if (!isMounted) return null
 
+    // TODO: Figure how to replace or remove images in Cloudinary instead of creating a new image when uploading.
     return (
         <div>
             <div className="mb-4 flex items-center gap-4">
