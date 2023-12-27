@@ -9,12 +9,12 @@ export async function POST(
 ) {
     try {
         const { userId } = auth() // retrieve logged in user from Clerk package
-        const { label, imageUrl } = await req.json() // retrieve data sent from user input
+        const { name, billboardId } = await req.json() // retrieve data sent from user input
 
         // Avoid possible errors
         if (!userId) return new NextResponse("Unauthenticated", { status: 401 })
-        if (!label) return new NextResponse("Label is required", { status: 400 })
-        if (!imageUrl) return new NextResponse("Image URL is required", { status: 400 })
+        if (!name) return new NextResponse("Name is required", { status: 400 })
+        if (!billboardId) return new NextResponse("Billboard ID URL is required", { status: 400 })
         if (!params.storeId) return new NextResponse("Store ID is required", { status: 400 })
 
         // Check that the store is from the user
@@ -27,17 +27,17 @@ export async function POST(
         if (!storeByUserId) return new NextResponse("Unauthorized", { status: 403 })
 
         // Create Store in DB
-        const billboard = await prismadb.billboard.create({
+        const category = await prismadb.category.create({
             data: {
-                label,
-                imageUrl,
+                name,
+                billboardId,
                 storeId: params.storeId
             }
         })
 
-        return NextResponse.json(billboard)
+        return NextResponse.json(category)
     } catch (error) {
-        console.log('[BILLBOARD_POST]', error)
+        console.log('[CATEGORY_POST]', error)
         return new NextResponse("Internal Error", { status: 500 })
     }
 }
@@ -49,14 +49,14 @@ export async function GET(
     try {
         if (!params.storeId) return new NextResponse("Store ID is required", { status: 400 })
 
-        // Get all billboards available for the store in DB
-        const billboards = await prismadb.billboard.findMany({
+        // Get all categories available for the store in DB
+        const category = await prismadb.category.findMany({
             where: { storeId: params.storeId }
         })
 
-        return NextResponse.json(billboards)
+        return NextResponse.json(category)
     } catch (error) {
-        console.log('[BILLBOARDS_GET]', error)
+        console.log('[CATEGORIES_GET]', error)
         return new NextResponse("Internal Error", { status: 500 })
     }
 }
