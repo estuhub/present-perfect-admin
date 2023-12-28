@@ -13,7 +13,8 @@ export async function GET(
 
         // Get all categories available for the store in DB
         const category = await prismadb.category.findUnique({
-            where: { id: params.categoryId }
+            where: { id: params.categoryId },
+            include: { billboard: true }
         })
 
         return NextResponse.json(category)
