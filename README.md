@@ -91,3 +91,6 @@ Provides the most comprehensive, yet simple and consistent toolset for manipulat
 
 ## Payment Method: Stripe
 Create an account in their [website](https://stripe.com/en-th). And add the following package. For more info, check [documentation](https://www.npmjs.com/package/stripe).
+
+## Show Charts: recharts
+For charts in React Apps</s>. For more info, check [documentation](https://www.npmjs.com/package/recharts).
