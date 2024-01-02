@@ -47,7 +47,7 @@ For reusable NextJS components. For more info, check [documentation](https://ui.
 Library for React applications that provides a simple and flexible way to manage global state. For more info, check [documentation](https://docs.pmnd.rs/zustand/getting-started/introduction)
  
 ## Database Management: Prisma & Prisma Client
-Simplify database access and management. For more info, check [documentation](https://www.prisma.io/docs)
+Simplify database access and management. For more info, check [documentation](https://www.prisma.io/docs). \
 To install: `npm i -D prisma @prisma/client` \
 To initialize: `npx prisma init` \
 To generate DB: `npx prisma generate` \
