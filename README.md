@@ -48,11 +48,12 @@ Library for React applications that provides a simple and flexible way to manage
  
 ## Database Management: Prisma & Prisma Client
 Simplify database access and management. For more info, check [documentation](https://www.prisma.io/docs)
-To install: `npm i -D prisma @prisma/client`
-To initialize: `npx prisma init`
-To generate DB: `npx prisma generate`
-To add/update schema in DB: `npx prisma db push`
-To reset DB: `npx prisma migrate reset`
+To install: `npm i -D prisma @prisma/client` \
+To initialize: `npx prisma init` \
+To generate DB: `npx prisma generate` \
+To add/update schema in DB: `npx prisma db push` \
+To reset DB: `npx prisma migrate reset` \
+To check DB: `npx prisma studio`
 
 ## MySQL-based database: PlanetScale
 MySQL-compatible serverless database that brings scale, performance, and reliability. For more info, check [documentation](https://planetscale.com/docs)
